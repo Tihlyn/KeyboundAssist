@@ -5,6 +5,8 @@ Notable changes are recorded here using the Keep a Changelog format and semantic
 
 ## Unreleased
 
+## [0.1.0] - 2026-10-28
+
 ### Added
 
 - Typing assist for the Gold Saucer duty Keybound Brawler: reads every enemy's word from
