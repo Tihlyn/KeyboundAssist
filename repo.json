@@ -1,0 +1,32 @@
+[
+  {
+    "Author": "Tihlyn",
+    "Name": "Keybound Assist",
+    "InternalName": "KeyboundAssist",
+    "AssemblyVersion": "0.1.0.0",
+    "Description": "Types the words shown over Keybound Brawler enemies at a configurable human pace and never submits a wrong word: every word is verified on screen before Enter, words taken by other players are erased, gaze casts and stuns are waited out. /kba opens the status window; it always loads disarmed.",
+    "ApplicableVersion": "any",
+    "RepoUrl": "https://github.com/Tihlyn/KeyboundAssist",
+    "Tags": [
+      "keybound brawler",
+      "gold saucer",
+      "typing"
+    ],
+    "CategoryTags": [
+      "Utility"
+    ],
+    "DalamudApiLevel": 15,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "Punchline": "Human-paced, error-free typing assist for Keybound Brawler.",
+    "AcceptsFeedback": true,
+    "DownloadLinkInstall": "https://github.com/Tihlyn/KeyboundAssist/releases/download/v0.1.0/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Tihlyn/KeyboundAssist/releases/download/v0.1.0/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Tihlyn/KeyboundAssist/releases/download/v0.1.0/latest.zip",
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "LastUpdate": 1793203361
+  }
+]
