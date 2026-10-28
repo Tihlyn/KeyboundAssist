@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      dalamud_track:
+        description: Dalamud distribution
+        type: choice
+        options: [release, staging]
+        default: release
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: ./.github/actions/setup-dalamud
+        with:
+          track: ${{ inputs.dalamud_track || vars.DALAMUD_TRACK || 'release' }}
+      - name: Build
+        run: dotnet build KeyboundAssist/KeyboundAssist.csproj -c Release -nologo
+      - name: Test repository tooling
+        run: python -B -m unittest discover -s tools -p test_make_repo_json.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KeyboundAssist
+          if-no-files-found: error
+          path: |
+            KeyboundAssist/bin/Release/KeyboundAssist/latest.zip
+            KeyboundAssist/bin/Release/KeyboundAssist/KeyboundAssist.json

@@ -1,0 +1,14 @@
+﻿bin/
+obj/
+*.user
+.vs/
+.idea/
+
+# Raw captures contain player names and IDs.
+re/captures/
+
+# Python bytecode from tools/
+__pycache__/
+
+# Claude Code agent worktrees
+.claude/worktrees/
